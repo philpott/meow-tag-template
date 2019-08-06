@@ -24,13 +24,18 @@ ___TEMPLATE_PARAMETERS___
   {
     "clearOnCopy": false,
     "alwaysInSummary": false,
-    "displayName": "Name",
-    "defaultValue": "cat",
+    "displayName": "Cat Name",
     "textAsList": false,
     "name": "text1",
     "type": "TEXT",
     "lineCount": 1,
     "canBeEmptyString": false
+  },
+  {
+    "type": "CHECKBOX",
+    "name": "checkbox1",
+    "checkboxText": "Should meow?",
+    "simpleValueType": true
   }
 ]
 
@@ -53,6 +58,10 @@ ___WEB_PERMISSIONS___
               {
                 "type": 1,
                 "string": "aaaaa"
+              },
+              {
+                "type": 1,
+                "string": "bbbbb"
               }
             ]
           }
@@ -186,13 +195,6 @@ ___WEB_PERMISSIONS___
           }
         },
         {
-          "key": "protocol",
-          "value": {
-            "type": 8,
-            "boolean": true
-          }
-        },
-        {
           "key": "port",
           "value": {
             "type": 8,
@@ -291,32 +293,6 @@ ___WEB_PERMISSIONS___
           "value": {
             "type": 1,
             "string": "debug"
-          }
-        }
-      ]
-    },
-    "clientAnnotations": {
-      "isEditedByUser": true
-    },
-    "isRequired": true
-  },
-  {
-    "instance": {
-      "key": {
-        "publicId": "inject_script",
-        "versionId": "1"
-      },
-      "param": [
-        {
-          "key": "urls",
-          "value": {
-            "type": 2,
-            "listItem": [
-              {
-                "type": 1,
-                "string": "https://google.com/*"
-              }
-            ]
           }
         }
       ]
@@ -499,7 +475,6 @@ const query = require('queryPermission');
 const createQueue = require('createQueue');
 const getUrl = require('getUrl');
 const iframe = require('injectHiddenIframe');
-const injectScript = require('injectScript');
 const log = require('logToConsole');
 const copyDL = require('copyFromDataLayer');
 const readCharacterSet = require('readCharacterSet');
@@ -517,4 +492,4 @@ data.gtmOnSuccess();
 
 ___NOTES___
 
-Created on 8/5/2019, 6:18:24 PM
+Created on 8/6/2019, 2:27:30 PM
